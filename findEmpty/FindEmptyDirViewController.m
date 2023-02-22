@@ -173,6 +173,8 @@
 - (BOOL)validateMenuItem:(NSMenuItem *)menuItem {
   if ([menuItem action] == @selector(openDocument:)) {
     return !self.isInFind;
+  } else if ([menuItem action] == @selector(showInFinder:)) {
+    return (0 != self.outlineView.selectedRowIndexes.count) && !self.isInFind;
   } else if ([menuItem action] == @selector(delete:)) {
     NSUInteger count = self.outlineView.selectedRowIndexes.count;
     BOOL isOK = (0 != count) && !self.isInFind;
@@ -187,7 +189,7 @@
   return NO;
 }
 
-#pragma mark - Service Menu
+#pragma mark -
 
 - (NSArray<NSURL *> *)selectedURLs {
   NSMutableArray<NSURL *> *urls = [NSMutableArray array];
@@ -222,6 +224,7 @@
   return NO;
 }
 
+#pragma mark -
 
 - (NSInteger)outlineView:(NSOutlineView *)outlineView numberOfChildrenOfItem:(nullable id)item {
   if (item == nil) {
@@ -252,7 +255,7 @@
   return view;
 }
 
-- (IBAction)doDoubleClick:(id)sender {
+- (IBAction)showInFinder:(id)sender {
   DirItem *dirItem = [self.outlineView itemAtRow:self.outlineView.clickedRow];
   NSString *path = dirItem.path;
   NSWorkspace *ws = [NSWorkspace sharedWorkspace];

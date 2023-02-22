@@ -81,6 +81,12 @@
                                                 </items>
                                             </menu>
                                         </menuItem>
+                                        <menuItem title="Show in Finder" id="33B-6m-Rh0">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="showInFinder:" target="Ady-hI-5gd" id="Vcn-Mx-Mgo"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="m54-Is-iLE"/>
                                         <menuItem title="Close" keyEquivalent="w" id="DVo-aG-piG">
                                             <connections>
@@ -115,7 +121,7 @@
                                                 <action selector="paste:" target="Ady-hI-5gd" id="UvS-8e-Qdg"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Delete" id="pa3-QI-u2k">
+                                        <menuItem title="Delete" keyEquivalent="" id="pa3-QI-u2k">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="delete:" target="Ady-hI-5gd" id="0Mk-Ml-PaM"/>
@@ -254,7 +260,7 @@
                                                 </tableColumn>
                                             </tableColumns>
                                             <connections>
-                                                <action trigger="doubleAction" selector="doDoubleClick:" target="XfG-lQ-9wD" id="ndi-D9-qRH"/>
+                                                <action trigger="doubleAction" selector="showInFinder:" target="XfG-lQ-9wD" id="ndi-D9-qRH"/>
                                                 <outlet property="dataSource" destination="XfG-lQ-9wD" id="C27-gw-SGG"/>
                                                 <outlet property="delegate" destination="XfG-lQ-9wD" id="jgZ-D9-lW6"/>
                                                 <outlet property="menu" destination="NkO-ly-NWW" id="cZw-6i-OMr"/>
